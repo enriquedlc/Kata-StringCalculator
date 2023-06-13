@@ -56,4 +56,11 @@ public class StringCalculatorTest {
         assertEquals(3, result);
     }
 
+    @Test
+    public void should_throw_exception_if_there_is_a_negative_number() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            stringCalculator.add("//;\n1;2;-5");
+        });
+    }
+
 }
