@@ -33,7 +33,13 @@ public class StringCalculatorTest {
 
     @Test
     public void should_return_addition_of_numbers_given() {
-        int result =  stringCalculator.add("1,2,3");
+        int result = stringCalculator.add("1,2,3");
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void should_add_numbers_with_newline_regex() {
+        int result = stringCalculator.add("1\n2,3");
         assertEquals(6, result);
     }
 
