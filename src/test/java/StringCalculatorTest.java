@@ -1,4 +1,5 @@
 import org.junit.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringCalculatorTest {
@@ -8,7 +9,6 @@ public class StringCalculatorTest {
      * EXAMPLE 1: "" => 0
      * EXAMPLE 2: "1" => 1
      * EXAMPLE 3: "1,2" => 3
-     *
      */
 
     private final StringCalculator stringCalculator = new StringCalculator();
@@ -25,5 +25,10 @@ public class StringCalculatorTest {
         assertEquals(1, result);
     }
 
+    @Test
+    public void should_return_add_of_two_numbers() {
+        int result = stringCalculator.add("1,2");
+        assertEquals(3, result);
+    }
 
 }
