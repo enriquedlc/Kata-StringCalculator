@@ -26,9 +26,15 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void should_return_add_of_two_numbers() {
+    public void should_return_addition_of_two_numbers() {
         int result = stringCalculator.add("1,2");
         assertEquals(3, result);
+    }
+
+    @Test
+    public void should_return_addition_of_numbers_given() {
+        int result =  stringCalculator.add("1,2,3");
+        assertEquals(6, result);
     }
 
 }
