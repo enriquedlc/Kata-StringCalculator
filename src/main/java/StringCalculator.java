@@ -1,12 +1,19 @@
-public class StringCalculator {
+import exception.NegativeNumberException;
 
-    public int add(String numbers) {
+import java.util.Arrays;
+
+public class StringCalculator {
+    public int add(String numbers) throws NegativeNumberException {
         if (numbers.isEmpty()) return 0;
 
         String delimiter = getDelimiter(numbers);
         String numbersWithoutDelimiter = getNumbersWithoutDelimiter(numbers);
 
         return sumNumbers(numbersWithoutDelimiter, delimiter);
+    }
+
+    private boolean isNegative(String number) {
+        return number.startsWith("-");
     }
 
     private boolean startWithDoubleSlash(String numbers) {
@@ -27,12 +34,15 @@ public class StringCalculator {
         return "[,|\n]";
     }
 
-    private int sumNumbers(String numbers, String delimiter) {
+    private int sumNumbers(String numbers, String delimiter) throws NegativeNumberException {
         int result = 0;
 
         String[] numberArray = numbers.split(delimiter);
 
         for (String number : numberArray) {
+            if (isNegative(number)) {
+                throw new NegativeNumberException("negatives not allowed");
+            }
             result += Integer.parseInt(number);
         }
 
