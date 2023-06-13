@@ -19,5 +19,11 @@ public class StringCalculatorTest {
         assertEquals(0, result);
     }
 
+    @Test
+    public void should_return_single_parameter_number() {
+        int result = stringCalculator.add("1");
+        assertEquals(1, result);
+    }
+
 
 }
