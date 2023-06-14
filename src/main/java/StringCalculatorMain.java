@@ -5,6 +5,7 @@ public class StringCalculatorMain {
 
     StringCalculator utils = new StringCalculator();
 
+
     public int add(String numbers) throws NegativeNumberException {
         if (numbers.isEmpty()) return 0;
 

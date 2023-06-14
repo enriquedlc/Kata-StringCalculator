@@ -67,4 +67,11 @@ public class StringCalculatorTest {
         String exceptionMessage = "negatives not allowed -7 -5";
         assertTrue(assertThrows(NegativeNumberException.class, () -> stringCalculator.add("//;\n1;2;-7;-5")).getMessage().contentEquals(exceptionMessage));
     }
+
+    @Test
+    public void how_many_times_did_add_method_was_executed() {
+        int result = stringCalculator.getCalledCount();
+        assertEquals(8, result);
+    }
+
 }
