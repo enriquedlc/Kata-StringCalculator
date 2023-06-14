@@ -19,7 +19,7 @@ public class StringCalculatorTest {
      * :heavy_check_mark:
      */
 
-    private final StringCalculator stringCalculator = new StringCalculator();
+    private final StringCalculatorMain stringCalculator = new StringCalculatorMain();
 
     @Test
     public void should_return_zero_if_empty_string_is_passed() throws NegativeNumberException {
